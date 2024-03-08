@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.goose.nc1test.controller.MainPageController">
+    <VBox layoutY="7.0" prefHeight="586.0" prefWidth="800" spacing="10">
+        <HBox alignment="CENTER" prefHeight="33.0" prefWidth="600.0" spacing="10">
+            <Label prefHeight="27.0" prefWidth="66.0" text="Time Period:" />
+            <ChoiceBox fx:id="searchTimePeriodPicker" onAction="#onSearch" value="All"/>
+            <TextField fx:id="searchHeadlineField" onKeyReleased="#onSearch" promptText="Search by headline" />
+            <TextField fx:id="searchDescriptionField" onKeyReleased="#onSearch" promptText="Search by description" />
+            <Label text="From:" />
+            <ChoiceBox fx:id="searchHourPicker" onAction="#onSearch" />
+            <Label text="h" />
+            <ChoiceBox fx:id="searchMinutePicker" onAction="#onSearch" />
+            <Label text="m" />
+            <ChoiceBox fx:id="searchSecondPicker" onAction="#onSearch" />
+            <Label text="s" />
+        </HBox>
+        <ListView fx:id="newsListView" maxHeight="478.0" prefWidth="600" style="-fx-selection-bar: white; -fx-selection-bar-non-focused: white;"/>
+        <HBox alignment="CENTER" spacing="10">
+            <Button fx:id="previousButton" onAction="#onPreviousPage" text="Previous" disable="true" />
+            <Label fx:id="currentPageLabel" text="Page 1" />
+            <Button fx:id="nextButton" onAction="#onNextPage" text="Next" />
+            <Button fx:id="refreshButton" onAction="#onRefresh" />
+        </HBox>
+        <HBox alignment="CENTER" spacing="10">
+            <Label prefHeight="27.0" prefWidth="129.0" text="Set number of elements:" />
+            <ChoiceBox fx:id="elementsNumberPicker" onAction="#onElementsNumberSelected" />
+        </HBox>
+        <HBox alignment="CENTER" spacing="10">
+            <Button onAction="#onAddNewsClicked" text="Add news" />
+        </HBox>
+    </VBox>
+
+    <VBox fx:id="addNewsDialog" alignment="CENTER" layoutX="114.0" layoutY="200.0" prefHeight="200.0" prefWidth="300.0" spacing="10" visible="false" style="-fx-background-color: lightgray">
+        <TextField fx:id="addNewsField" maxWidth="-Infinity" promptText="Pass the link to article from bbc.com" />
+        <HBox alignment="CENTER" spacing="10">
+            <Button onAction="#onAddCancelButtonClicked" text="Cancel" />
+            <Button onAction="#onAddCommitButtonClicked" text="Add news" />
+        </HBox>
+    </VBox>
+
+    <VBox fx:id="changeNewsDialog" alignment="CENTER" layoutX="114.0" layoutY="200.0" prefHeight="500.0" prefWidth="500.0" spacing="10" visible="false" style="-fx-background-color: lightgray">
+        <TextArea fx:id="changeHeadlineField" maxWidth="-Infinity" promptText="Change headline" />
+        <TextArea fx:id="changeDescriptionField" maxWidth="-Infinity" promptText="Change description" />
+        <HBox spacing="10">
+            <Label prefHeight="27.0" prefWidth="49.0" text="Set time:" />
+            <ChoiceBox fx:id="changeHourPicker" />
+            <ChoiceBox fx:id="changeMinutePicker" />
+            <ChoiceBox fx:id="changeSecondPicker" />
+        </HBox>
+        <HBox alignment="CENTER" spacing="10">
+            <Button onAction="#onChangeCancelButtonClicked" text="Cancel" />
+            <Button onAction="#onChangeCommitButtonClicked" text="Add news" />
+        </HBox>
+    </VBox>
+</AnchorPane>

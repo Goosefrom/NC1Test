@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<GridPane fx:id="gridPane" xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            maxHeight="-Infinity" maxWidth="770" minHeight="-Infinity" minWidth="0">
+    <HBox alignment="CENTER">
+        <VBox>
+            <Label fx:id="headlineLabel" wrapText="true" underline="true" />
+            <Label fx:id="publicationTimeLabel" />
+            <Label fx:id="descriptionText" wrapText="true" maxHeight="20" />
+        </VBox>
+        <Button fx:id="changeIcon" maxWidth="20.0" maxHeight="20.0" />
+        <Button fx:id="deleteIcon" maxWidth="20.0" maxHeight="20.0" />
+    </HBox>
+
+</GridPane>
